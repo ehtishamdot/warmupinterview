@@ -1,0 +1,16 @@
+@import "./styles/property";
+@import "./styles/function";
+
+.App {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: color(bg);
+}
+
+
+code{
+  width: 100%;
+  height: 100%;
+  background: white;
+}

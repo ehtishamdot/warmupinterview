@@ -1,0 +1,56 @@
+.DropDown {
+  z-index: 5;
+  display: flex;
+  height: fit-content;
+  position: relative;
+}
+
+.DropDown__wrapper {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  background: color(board);
+  width: 12rem;
+  top: 130%;
+  right: 0;
+  padding: 1rem 0;
+  padding-left: $margin-small;
+  border-radius: 8px;
+  animation: fadeIn 0.3s ease;
+  // display: none;
+
+  @include boxShadow;
+}
+
+.DropDown__text {
+  color: $mediumGray;
+  transition: opacity 0.2s ease;
+
+  &--warning {
+    color: $red;
+    margin-top: $margin-tiny;
+  }
+
+  &:hover {
+    opacity: $hover;
+  }
+}
+
+.DropDown__button-ellipsis {
+  margin-left: $margin-small;
+  color: $mediumGray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 22px;
+  height: 38px;
+  border-radius: 10px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+
+  &:hover {
+    background: color(ellipsis);
+  }
+}
+

@@ -1,0 +1,469 @@
+{
+  "boards": [
+    {
+      "id": 0,
+      "name": "Javascript",
+      "columns": [
+        {
+          "id": 0,
+          "name": "Todo",
+          "tasks": [
+            {
+              "id": 0,
+              "question": "What are the possible ways to create objects in JavaScript",
+              "description": "",
+              "status": "Todo",
+              "statusId": 0,
+              "solution": " There are many ways to create objects in javascript as below\n\n   1. **Object constructor:**\n\n      The simplest way to create an empty object is using the Object constructor. Currently this approach is not recommended.\n\n      ```javascript\n      var object = new Object();\n      ```\n\n   2. **Object's create method:**\n\n      The create method of Object creates a new object by passing the prototype object as a parameter\n\n      ```javascript\n      var object = Object.create(null);\n      ```\n\n   3. **Object literal syntax:**\n\n      The object literal syntax (or object initializer), is a comma-separated set of name-value pairs wrapped in curly braces.\n\n      ```javascript\n      var object = {\n           name: \"Sudheer\",\n           age: 34\n      };\n\n      Object literal property values can be of any data type, including array, function, and nested object.\n      ```\n\n      **Note:** This is an easiest way to create an object\n\n   4. **Function constructor:**\n\n      Create any function and apply the new operator to create object instances,\n\n      ```javascript\n      function Person(name) {\n        this.name = name;\n        this.age = 21;\n      }\n      var object = new Person(\"Sudheer\");\n      ```\n\n   5. **Function constructor with prototype:**\n\n      This is similar to function constructor but it uses prototype for their properties and methods,\n\n      ```javascript\n      function Person() {}\n      Person.prototype.name = \"Sudheer\";\n      var object = new Person();\n      ```\n\n      This is equivalent to an instance created with an object create method with a function prototype and then call that function with an instance and parameters as arguments.\n\n      ```javascript\n      function func() {}\n\n      new func(x, y, z);\n      ```\n\n      **(OR)**\n\n      ```javascript\n      // Create a new instance using function prototype.\n      var newInstance = Object.create(func.prototype)\n\n      // Call the function\n      var result = func.call(newInstance, x, y, z),\n\n      // If the result is a non-null object then use it otherwise just use the new instance.\n      console.log(result && typeof result === 'object' ? result : newInstance);\n      ```\n\n   6. **ES6 Class syntax:**\n\n      ES6 introduces class feature to create the objects\n\n      ```javascript\n      class Person {\n        constructor(name) {\n          this.name = name;\n        }\n      }\n\n      var object = new Person(\"Sudheer\");\n      ```\n\n   7. **Singleton pattern:**\n\n      A Singleton is an object which can only be instantiated one time. Repeated calls to its constructor return the same instance and this way one can ensure that they don't accidentally create multiple instances.\n\n      ```javascript\n      var object = new (function () {\n        this.name = \"Sudheer\";\n      })();\n      ```"
+            },
+            {
+              "id": 1,
+              "question": "What is a prototype chain",
+              "description": "",
+              "status": "Todo",
+              "statusId": 0,
+              "solution": " There are many ways to create objects in javascript as below\n\n   1. **Object constructor:**\n\n      The simplest way to create an empty object is using the Object constructor. Currently this approach is not recommended.\n\n      ```javascript\n      var object = new Object();\n      ```\n\n   2. **Object's create method:**\n\n      The create method of Object creates a new object by passing the prototype object as a parameter\n\n      ```javascript\n      var object = Object.create(null);\n      ```\n\n   3. **Object literal syntax:**\n\n      The object literal syntax (or object initializer), is a comma-separated set of name-value pairs wrapped in curly braces.\n\n      ```javascript\n      var object = {\n           name: \"Sudheer\",\n           age: 34\n      };\n\n      Object literal property values can be of any data type, including array, function, and nested object.\n      ```\n\n      **Note:** This is an easiest way to create an object\n\n   4. **Function constructor:**\n\n      Create any function and apply the new operator to create object instances,\n\n      ```javascript\n      function Person(name) {\n        this.name = name;\n        this.age = 21;\n      }\n      var object = new Person(\"Sudheer\");\n      ```\n\n   5. **Function constructor with prototype:**\n\n      This is similar to function constructor but it uses prototype for their properties and methods,\n\n      ```javascript\n      function Person() {}\n      Person.prototype.name = \"Sudheer\";\n      var object = new Person();\n      ```\n\n      This is equivalent to an instance created with an object create method with a function prototype and then call that function with an instance and parameters as arguments.\n\n      ```javascript\n      function func() {}\n\n      new func(x, y, z);\n      ```\n\n      **(OR)**\n\n      ```javascript\n      // Create a new instance using function prototype.\n      var newInstance = Object.create(func.prototype)\n\n      // Call the function\n      var result = func.call(newInstance, x, y, z),\n\n      // If the result is a non-null object then use it otherwise just use the new instance.\n      console.log(result && typeof result === 'object' ? result : newInstance);\n      ```\n\n   6. **ES6 Class syntax:**\n\n      ES6 introduces class feature to create the objects\n\n      ```javascript\n      class Person {\n        constructor(name) {\n          this.name = name;\n        }\n      }\n\n      var object = new Person(\"Sudheer\");\n      ```\n\n   7. **Singleton pattern:**\n\n      A Singleton is an object which can only be instantiated one time. Repeated calls to its constructor return the same instance and this way one can ensure that they don't accidentally create multiple instances.\n\n      ```javascript\n      var object = new (function () {\n        this.name = \"Sudheer\";\n      })();\n      ```"
+            },
+            {
+              "id": 2,
+              "question": "What is the difference between Call, Apply and Bind",
+              "description": "",
+              "status": "Todo",
+              "statusId": 0,
+              "solution": "### What is the difference between Call, Apply and Bind\n\n   The difference between Call, Apply and Bind can be explained with below examples,\n\n   **Call:** The call() method invokes a function with a given `this` value and arguments provided one by one\n\n   ```javascript\n   var employee1 = { firstName: \"John\", lastName: \"Rodson\" };\n   var employee2 = { firstName: \"Jimmy\", lastName: \"Baily\" };\n\n   function invite(greeting1, greeting2) {\n     console.log(\n       greeting1 + \" \" + this.firstName + \" \" + this.lastName + \", \" + greeting2\n     );\n   }\n\n   invite.call(employee1, \"Hello\", \"How are you?\"); // Hello John Rodson, How are you?\n   invite.call(employee2, \"Hello\", \"How are you?\"); // Hello Jimmy Baily, How are you?\n   ```\n\n   **Apply:** Invokes the function with a given `this` value and allows you to pass in arguments as an array\n\n   ```javascript\n   var employee1 = { firstName: \"John\", lastName: \"Rodson\" };\n   var employee2 = { firstName: \"Jimmy\", lastName: \"Baily\" };\n\n   function invite(greeting1, greeting2) {\n     console.log(\n       greeting1 + \" \" + this.firstName + \" \" + this.lastName + \", \" + greeting2\n     );\n   }\n\n   invite.apply(employee1, [\"Hello\", \"How are you?\"]); // Hello John Rodson, How are you?\n   invite.apply(employee2, [\"Hello\", \"How are you?\"]); // Hello Jimmy Baily, How are you?\n   ```\n\n   **bind:** returns a new function, allowing you to pass any number of arguments\n\n   ```javascript\n   var employee1 = { firstName: \"John\", lastName: \"Rodson\" };\n   var employee2 = { firstName: \"Jimmy\", lastName: \"Baily\" };\n\n   function invite(greeting1, greeting2) {\n     console.log(\n       greeting1 + \" \" + this.firstName + \" \" + this.lastName + \", \" + greeting2\n     );\n   }\n\n   var inviteEmployee1 = invite.bind(employee1);\n   var inviteEmployee2 = invite.bind(employee2);\n   inviteEmployee1(\"Hello\", \"How are you?\"); // Hello John Rodson, How are you?\n   inviteEmployee2(\"Hello\", \"How are you?\"); // Hello Jimmy Baily, How are you?\n   ```\n\n   Call and apply are pretty interchangeable. Both execute the current function immediately. You need to decide whether it’s easier to send in an array or a comma separated list of arguments. You can remember by treating Call is for **comma** (separated list) and Apply is for **Array**.\n\n   Whereas Bind creates a new function that will have `this` set to the first parameter passed to bind()."
+            },
+            {
+              "id": 3,
+              "question": "What is JSON and its common operations",
+              "description": "",
+              "status": "Todo",
+              "statusId": 0,
+              "solution": " **JSON** is a text-based data format following JavaScript object syntax, which was popularized by `Douglas Crockford`. It is useful when you want to transmit data across a network and it is basically just a text file with an extension of .json, and a MIME type of application/json\n\n    **Parsing:** Converting a string to a native object\n\n    ```javascript\n    JSON.parse(text);\n    ```\n\n    **Stringification:** converting a native object to a string so it can be transmitted across the network\n\n    ```javascript\n    JSON.stringify(object);\n    ```"
+            },
+            {
+              "id": 4,
+              "question": "What is the purpose of the array slice method",
+              "description": "",
+              "status": "Todo",
+              "statusId": 0,
+              "solution": "### What is the purpose of the array slice method\n\n   The **slice()** method returns the selected elements in an array as a new array object. It selects the elements starting at the given start argument, and ends at the given optional end argument without including the last element. If you omit the second argument then it selects till the end.\n\n   Some of the examples of this method are,\n\n   ```javascript\n   let arrayIntegers = [1, 2, 3, 4, 5];\n   let arrayIntegers1 = arrayIntegers.slice(0, 2); // returns [1,2]\n   let arrayIntegers2 = arrayIntegers.slice(2, 3); // returns [3]\n   let arrayIntegers3 = arrayIntegers.slice(4); //returns [5]\n   ```\n\n   **Note:** Slice method won't mutate the original array but it returns the subset as a new array."
+            },
+            {
+              "id": 5,
+              "question": "What is the purpose of the array splice method",
+              "description": "",
+              "status": "Todo",
+              "statusId": 0,
+              "solution": "### What is the purpose of the array splice method\n\n   The **splice()** method is used either adds/removes items to/from an array, and then returns the removed item. The first argument specifies the array position for insertion or deletion whereas the optional second argument indicates the number of elements to be deleted. Each additional argument is added to the array.\n\n   Some of the examples of this method are,\n\n   ```javascript\n   let arrayIntegersOriginal1 = [1, 2, 3, 4, 5];\n   let arrayIntegersOriginal2 = [1, 2, 3, 4, 5];\n   let arrayIntegersOriginal3 = [1, 2, 3, 4, 5];\n\n   let arrayIntegers1 = arrayIntegersOriginal1.splice(0, 2); // returns [1, 2]; original array: [3, 4, 5]\n   let arrayIntegers2 = arrayIntegersOriginal2.splice(3); // returns [4, 5]; original array: [1, 2, 3]\n   let arrayIntegers3 = arrayIntegersOriginal3.splice(3, 1, \"a\", \"b\", \"c\"); //returns [4]; original array: [1, 2, 3, \"a\", \"b\", \"c\", 5]\n   ```\n\n   **Note:** Splice method modifies the original array and returns the deleted array.\n\n   **[⬆ Back to Top](#table-of-contents)**\n\n7. ### What is the difference between slice and splice\n\n   Some of the major difference in a tabular form\n\n   | Slice                                        | Splice                                          |\n   | -------------------------------------------- | ----------------------------------------------- |\n   | Doesn't modify the original array(immutable) | Modifies the original array(mutable)            |\n   | Returns the subset of original array         | Returns the deleted elements as array           |\n   | Used to pick the elements from array         | Used to insert or delete elements to/from array |"
+            },
+            {
+              "id": 6,
+              "question": "How do you compare Object and Map",
+              "description": "",
+              "status": "Todo",
+              "statusId": 0,
+              "solution": " | Slice                                        | Splice                                          |\n   | -------------------------------------------- | ----------------------------------------------- |\n   | Doesn't modify the original array(immutable) | Modifies the original array(mutable)            |\n   | Returns the subset of original array         | Returns the deleted elements as array           |\n   | Used to pick the elements from array         | Used to insert or delete elements to/from array |"
+            }
+          ]
+        },
+        {
+          "id": 1,
+          "name": "Doing",
+          "tasks": [
+            {
+              "id": 4,
+              "title": "Design settings and search pages",
+              "description": "",
+              "status": "Doing",
+              "statusId": 1,
+              "subtasks": [
+                {
+                  "title": "Settings - Account page",
+                  "isCompleted": true
+                },
+                {
+                  "title": "Settings - Billing page",
+                  "isCompleted": true
+                },
+                {
+                  "title": "Search page",
+                  "isCompleted": false
+                }
+              ]
+            },
+            {
+              "id": 5,
+              "title": "Add account management endpoints",
+              "description": "",
+              "status": "Doing",
+              "statusId": 1,
+              "subtasks": [
+                {
+                  "title": "Upgrade plan",
+                  "isCompleted": true
+                },
+                {
+                  "title": "Cancel plan",
+                  "isCompleted": true
+                },
+                {
+                  "title": "Update payment method",
+                  "isCompleted": false
+                }
+              ]
+            },
+            {
+              "id": 6,
+              "title": "Design onboarding flow",
+              "description": "",
+              "status": "Doing",
+              "statusId": 1,
+              "subtasks": [
+                {
+                  "title": "Sign up page",
+                  "isCompleted": true
+                },
+                {
+                  "title": "Sign in page",
+                  "isCompleted": false
+                },
+                {
+                  "title": "Welcome page",
+                  "isCompleted": false
+                }
+              ]
+            },
+            {
+              "id": 7,
+              "title": "Add search enpoints",
+              "description": "",
+              "status": "Doing",
+              "statusId": 1,
+              "subtasks": [
+                {
+                  "title": "Add search endpoint",
+                  "isCompleted": true
+                },
+                {
+                  "title": "Define search filters",
+                  "isCompleted": false
+                }
+              ]
+            },
+            {
+              "id": 8,
+              "title": "Add authentication endpoints",
+              "description": "",
+              "status": "Doing",
+              "statusId": 1,
+              "subtasks": [
+                {
+                  "title": "Define user model",
+                  "isCompleted": true
+                },
+                {
+                  "title": "Add auth endpoints",
+                  "isCompleted": false
+                }
+              ]
+            },
+            {
+              "id": 9,
+              "title": "Research pricing points of various competitors and trial different business models",
+              "description": "We know what we're planning to build for version one. Now we need to finalise the first pricing model we'll use. Keep iterating the subtasks until we have a coherent proposition.",
+              "status": "Doing",
+              "statusId": 1,
+              "subtasks": [
+                {
+                  "title": "Research competitor pricing and business models",
+                  "isCompleted": true
+                },
+                {
+                  "title": "Outline a business model that works for our solution",
+                  "isCompleted": false
+                },
+                {
+                  "title": "Talk to potential customers about our proposed solution and ask for fair price expectancy",
+                  "isCompleted": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "name": "Done",
+          "tasks": [
+            {
+              "id": 10,
+              "title": "Conduct 5 wireframe tests",
+              "description": "Ensure the layout continues to make sense and we have strong buy-in from potential users.",
+              "status": "Done",
+              "statusId": 2,
+              "subtasks": [
+                {
+                  "title": "Complete 5 wireframe prototype tests",
+                  "isCompleted": true
+                }
+              ]
+            },
+            {
+              "id": 11,
+              "title": "Create wireframe prototype",
+              "description": "Create a greyscale clickable wireframe prototype to test our asssumptions so far.",
+              "status": "Done",
+              "statusId": 2,
+              "subtasks": [
+                {
+                  "title": "Create clickable wireframe prototype in Balsamiq",
+                  "isCompleted": true
+                }
+              ]
+            },
+            {
+              "id": 12,
+              "title": "Review results of usability tests and iterate",
+              "description": "Keep iterating through the subtasks until we're clear on the core concepts for the app.",
+              "status": "Done",
+              "statusId": 2,
+              "subtasks": [
+                {
+                  "title": "Meet to review notes from previous tests and plan changes",
+                  "isCompleted": true
+                },
+                {
+                  "title": "Make changes to paper prototypes",
+                  "isCompleted": true
+                },
+                {
+                  "title": "Conduct 5 usability tests",
+                  "isCompleted": true
+                }
+              ]
+            },
+            {
+              "id": 13,
+              "title": "Create paper prototypes and conduct 10 usability tests with potential customers",
+              "description": "",
+              "status": "Done",
+              "statusId": 2,
+              "subtasks": [
+                {
+                  "title": "Create paper prototypes for version one",
+                  "isCompleted": true
+                },
+                {
+                  "title": "Complete 10 usability tests",
+                  "isCompleted": true
+                }
+              ]
+            },
+            {
+              "id": 14,
+              "title": "Market discovery",
+              "description": "We need to define and refine our core product. Interviews will help us learn common pain points and help us define the strongest MVP.",
+              "status": "Done",
+              "statusId": 2,
+              "subtasks": [
+                {
+                  "title": "Interview 10 prospective customers",
+                  "isCompleted": true
+                }
+              ]
+            },
+            {
+              "id": 15,
+              "title": "Competitor analysis",
+              "description": "",
+              "status": "Done",
+              "statusId": 2,
+              "subtasks": [
+                {
+                  "title": "Find direct and indirect competitors",
+                  "isCompleted": true
+                },
+                {
+                  "title": "SWOT analysis for each competitor",
+                  "isCompleted": true
+                }
+              ]
+            },
+            {
+              "id": 16,
+              "title": "Research the market",
+              "description": "We need to get a solid overview of the market to ensure we have up-to-date estimates of market size and demand.",
+              "status": "Done",
+              "statusId": 2,
+              "subtasks": [
+                {
+                  "title": "Write up research analysis",
+                  "isCompleted": true
+                },
+                {
+                  "title": "Calculate TAM",
+                  "isCompleted": true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "name": "Marketing Plan",
+      "columns": [
+        {
+          "id": 0,
+          "name": "Todo",
+          "tasks": [
+            {
+              "id": 17,
+              "title": "Plan Product Hunt launch",
+              "description": "11",
+              "status": "Todo",
+              "statusId": 0,
+              "subtasks": [
+                {
+                  "title": "Find hunter",
+                  "isCompleted": false
+                },
+                {
+                  "title": "Gather assets",
+                  "isCompleted": false
+                },
+                {
+                  "title": "Draft product page",
+                  "isCompleted": false
+                },
+                {
+                  "title": "Notify customers",
+                  "isCompleted": false
+                },
+                {
+                  "title": "Notify network",
+                  "isCompleted": false
+                },
+                {
+                  "title": "Launch!",
+                  "isCompleted": false
+                }
+              ]
+            },
+            {
+              "id": 18,
+              "title": "Share on Show HN",
+              "description": "",
+              "status": "Todo",
+              "statusId": 0,
+              "subtasks": [
+                {
+                  "title": "Draft out HN post",
+                  "isCompleted": false
+                },
+                {
+                  "title": "Get feedback and refine",
+                  "isCompleted": false
+                },
+                {
+                  "title": "Publish post",
+                  "isCompleted": false
+                }
+              ]
+            },
+            {
+              "id": 19,
+              "title": "Write launch article to publish on multiple channels",
+              "description": "",
+              "status": "Todo",
+              "statusId": 0,
+              "subtasks": [
+                {
+                  "title": "Write article",
+                  "isCompleted": false
+                },
+                {
+                  "title": "Publish on LinkedIn",
+                  "isCompleted": false
+                },
+                {
+                  "title": "Publish on Inndie Hackers",
+                  "isCompleted": false
+                },
+                {
+                  "title": "Publish on Medium",
+                  "isCompleted": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 1,
+          "name": "Doing",
+          "tasks": []
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Roadmap",
+      "columns": [
+        {
+          "name": "Now",
+          "id": 0,
+          "tasks": [
+            {
+              "id": 20,
+              "title": "Launch version one",
+              "description": "",
+              "status": "Now",
+              "statusId": 0,
+              "subtasks": [
+                {
+                  "title": "Launch privately to our waitlist",
+                  "isCompleted": false
+                },
+                {
+                  "title": "Launch publicly on PH, HN, etc.",
+                  "isCompleted": false
+                }
+              ]
+            },
+            {
+              "id": 21,
+              "title": "Review early feedback and plan next steps for roadmap",
+              "description": "Beyond the initial launch, we're keeping the initial roadmap completely empty. This meeting will help us plan out our next steps based on actual customer feedback.",
+              "status": "Now",
+              "statusId": 0,
+              "subtasks": [
+                {
+                  "title": "Interview 10 customers",
+                  "isCompleted": false
+                },
+                {
+                  "title": "Review common customer pain points and suggestions",
+                  "isCompleted": false
+                },
+                {
+                  "title": "Outline next steps for our roadmap",
+                  "isCompleted": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 1,
+          "name": "Next",
+          "tasks": []
+        },
+        {
+          "id": 2,
+          "name": "Later",
+          "tasks": []
+        }
+      ]
+    }
+  ]
+}

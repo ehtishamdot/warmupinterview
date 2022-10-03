@@ -1,0 +1,83 @@
+.SideNav {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  text-align: left;
+  min-width: 18.75rem;
+  color: $mediumGray;
+  background: color(main);
+  left: 0;
+  height: calc(100% - 6rem);
+  padding: $margin-small 0;
+  font-weight: bold;
+  border-right: 1px solid color(borderLine);
+  z-index: 5;
+
+  //my styles
+}
+
+.SideNav__head {
+  padding-left: $margin-large;
+  font-size: $font-12;
+  margin-bottom: $margin-small;
+  letter-spacing: 2.4px;
+}
+
+.SideNav__tab {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 17.25rem;
+  padding-left: $margin-large;
+  padding-bottom: $margin-tiny;
+  padding-top: $margin-tiny;
+  color: inherit;
+  background: transparent;
+  transition: color 0.2s ease;
+  position: relative;
+  margin-bottom: 0.2rem;
+
+  & > svg {
+    margin-right: $margin-small;
+  }
+
+  &::after {
+    transition: background-color 0.1s ease-in;
+    content: "";
+    z-index: -1;
+    border-radius: 0 25px 25px 0;
+    height: 100%;
+    width: 100%;
+    background-color: transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  &:hover:not(&--addNew, &--active) {
+    color: $white;
+
+    &::after {
+      content: "";
+      background-color: $lightBlue;
+    }
+  }
+
+  &--addNew {
+    color: $darkBlue;
+    transition: opacity 0.1s ease-out;
+
+    &:hover {
+      opacity: $hover;
+    }
+  }
+
+  &--active {
+    color: $white;
+    &::after {
+      content: "";
+      background-color: $darkBlue;
+    }
+  }
+}

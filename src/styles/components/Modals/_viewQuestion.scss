@@ -1,0 +1,59 @@
+.ViewQuestion {
+  width: 40rem;
+  height: 7em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.ViewQuestion__topWrapper {
+  &--text {
+    font-size: $font-23;
+    cursor: pointer;
+
+    &:hover {
+      opacity: $hover;
+      transition: all 0.2s ease-in-out;
+    }
+  }
+}
+
+.ViewQuestion__actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  & button:hover {
+    background-color: $lightBlue;
+    transition: 0.3s all ease-in-out;
+  }
+
+  &--left {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  &--answer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    margin-right: $margin-tiny;
+  }
+
+  &--keyboard {
+    border-radius: 5px;
+    background: 0;
+    border: 1px solid $darkBlue;
+  }
+
+  &--keyboard svg {
+    width: 2rem;
+    height: 1.39rem;
+    color: $darkBlue;
+  }
+
+  &--solution {
+  }
+}

@@ -1,0 +1,22 @@
+.TimeWatch {
+  width: 10rem;
+  height: 10rem;
+  background: blue($color: #000000);
+}
+
+.TimeWatch__button {
+  color: white;
+  font-size: bolder;
+  background-color: $darkBlue;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  & > svg {
+    width: 2.5rem;
+  }
+}

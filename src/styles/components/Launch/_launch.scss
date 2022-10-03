@@ -1,0 +1,15 @@
+.Launch {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  background-color: color(main);
+  color: color(subTitle);
+  padding: $margin-medium;
+  border-bottom: 1px solid color(borderLine);
+
+  &__buttons {
+    display: flex;
+    align-items: center;
+  }
+}

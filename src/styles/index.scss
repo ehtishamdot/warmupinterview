@@ -1,0 +1,29 @@
+// fundamentals
+@import "./property";
+@import "./reset";
+@import "./function";
+@import "./typography";
+// @import "./animation";
+
+// Layout
+@import "./layout/header";
+@import "./layout/main";
+
+//standards
+@import "./standard/button";
+@import "./standard/dropDown";
+@import "./standard/modal";
+@import "./standard/checkBox";
+@import "./standard/markdown";
+
+//Components
+@import "./components/SideNav/sideNav";
+@import "./components/Launch/launch";
+@import "./components/Board/board";
+@import "./components/Board/column";
+@import "./components/Board/card";
+@import "./components/Modals/viewTopic";
+@import "./components/Modals/viewSolution";
+@import "./components/Modals/viewQuestion";
+@import "./components/Interview/header";
+@import "./components/Quiz/timeWach";
