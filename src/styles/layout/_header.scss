@@ -3,6 +3,16 @@
   width: 100%;
   height: 6rem;
   background: color(main);
+
+  &__logo {
+    min-width: 18.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    border: 1px solid color(borderLine);
+    font-size: $font-30;
+  }
 }
 
 .Interview__header {

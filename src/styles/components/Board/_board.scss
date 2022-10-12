@@ -1,11 +1,14 @@
 .Board {
   position: absolute;
   left: 18.75rem;
-  display: flex;
   min-width: 100%;
   height: 100%;
   color: $white;
   transition: left 0.2s ease;
   padding: $margin-medium $margin-large;
   cursor: move;
+
+  &__columns {
+    display: flex;
+  }
 }

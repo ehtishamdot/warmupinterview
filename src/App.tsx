@@ -17,8 +17,8 @@ const App = () => {
     const getData = async () => {
       const data = await import("./data/data.json");
       dispatch(getLocalData(data.boards));
-      dispatch(setBoardStatus(data.boards[0].name));
-      dispatch(setTopic(data.boards[0].name));
+      dispatch(setBoardStatus(data.boards[1].name));
+      dispatch(setTopic(data.boards[1].name));
     };
 
     getData();
@@ -29,7 +29,6 @@ const App = () => {
       <Routes>
         <Route path="*" element={<Dashboard />} />
         <Route path="dashboard" element={<Dashboard />} />
-        <Route path="interview" element={<Interview />} />
       </Routes>
       <Modals />
     </div>

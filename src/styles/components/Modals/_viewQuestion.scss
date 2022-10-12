@@ -1,7 +1,7 @@
 .ViewQuestion {
   width: 40rem;
-  height: 7em;
   display: flex;
+  height: 100%;
   flex-direction: column;
   justify-content: space-between;
 }
@@ -16,6 +16,42 @@
       transition: all 0.2s ease-in-out;
     }
   }
+}
+
+.ViewQuestion__middleWrapper {
+  margin: $margin-tiny 0;
+  background-color: color(bg);
+  border: 1px solid color(borderLine);
+  padding: 0.4rem;
+  padding-left: 0.6rem;
+  padding-top: 0.9rem;
+  height: 15rem;
+
+  &--text {
+    color: $mediumGray;
+    word-break: break-all;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+  }
+
+  &--textarea {
+    background: 0;
+    width: 100%;
+    height: 100%;
+    color: $mediumGray;
+    overflow-y: auto;
+    resize: none;
+  }
+
+  &--textarea::placeholder {
+    opacity: $hover;
+    color: $mediumGray;
+  }
+}
+
+.ViewQuestion__bottomWrapper {
+  margin-top: $margin-medium;
 }
 
 .ViewQuestion__actions {
@@ -52,8 +88,5 @@
     width: 2rem;
     height: 1.39rem;
     color: $darkBlue;
-  }
-
-  &--solution {
   }
 }

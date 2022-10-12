@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useSpeechSynthesis, useSpeechRecognition } from "react-speech-kit";
 import { Keyboard, Microphone } from "../../data/icons";
 import { IModal } from "../../data/type";
@@ -8,10 +8,16 @@ import Button from "../../standard/Button";
 import Modal from "../../standard/Modal";
 
 const ViewQuestion = ({ ModalDetail }: IModal) => {
-  const { speak } = useSpeechSynthesis();
+  const [speech, setSpeech] = useState("");
+  const [isKeyboard, setIsKeyBoard] = useState(false);
 
-  //
-  //   const { listen, listening, stop } = useSpeechRecognition();
+  const { speak, speaking } = useSpeechSynthesis();
+
+  const { listen, listening, stop } = useSpeechRecognition({
+    onResult: (result: string) => {
+      setSpeech(result);
+    },
+  });
 
   const dispatch = useAppDispatch();
 
@@ -25,21 +31,51 @@ const ViewQuestion = ({ ModalDetail }: IModal) => {
       <div className="ViewQuestion">
         <div className="ViewQuestion__topWrapper">
           <p
-            onClick={() => speak({ text: ModalDetail.question })}
+            onClick={() => {
+              !speaking && speak({ text: ModalDetail.question });
+            }}
             className="ViewQuestion__topWrapper--text"
           >
             {ModalDetail.question}
           </p>
         </div>
+        {
+          <div className="ViewQuestion__middleWrapper">
+            <slot></slot>
+            {!isKeyboard && (
+              <div className="ViewQuestion__middleWrapper--text">{speech}</div>
+            )}
+            {isKeyboard && (
+              <textarea
+                onChange={(event) => setSpeech(event.target.value)}
+                value={speech}
+                className="ViewQuestion__middleWrapper--textarea"
+                placeholder="Type your answer here."
+              />
+            )}
+          </div>
+        }
         <div className="ViewQuestion__bottomWrapper">
           <div className="ViewQuestion__actions">
             <div className="ViewQuestion__actions--left">
-              <Button className="ViewQuestion__actions--answer">
+              <Button
+                onClick={() => {
+                  if (!listening) listen();
+                  setIsKeyBoard(false);
+                }}
+                className="ViewQuestion__actions--answer"
+              >
                 &nbsp;
                 <Microphone />
                 &nbsp;&nbsp;&nbsp;Answer&nbsp;&nbsp;
               </Button>
-              <Button className="ViewQuestion__actions--keyboard">
+              <Button
+                onClick={() => {
+                  if (listening) stop();
+                  setIsKeyBoard(true);
+                }}
+                className="ViewQuestion__actions--keyboard"
+              >
                 <Keyboard />
               </Button>
             </div>

@@ -7,7 +7,6 @@ import ViewTopic from "./ViewTopic";
 const Modals = () => {
   const getModal = useAppSelector((state) => state.modal);
   const BoardTab = useAppSelector((state) => state.boardTab);
-  console.log();
   return (
     <>
       {/* {getModal.ModalType === "viewTopic" && (

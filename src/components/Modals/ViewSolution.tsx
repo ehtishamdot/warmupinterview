@@ -2,17 +2,23 @@ import Modal from "../../standard/Modal";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { dark } from "react-syntax-highlighter/dist/esm/styles/prism";
+import { dracula } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 import { IModal } from "../../data/type";
+import Navigation from "../Navigation";
 
-const ViewSolution = ({ ModalDetail }: IModal) => {
-  //   console.log(questions[0]?.content[0]?.questions);
-
-  console.log(JSON.parse(JSON.stringify(ModalDetail.solution)));
+const ViewSolution = ({ ModalDetail, ModalType }: IModal) => {
   return (
     <Modal>
       <div className="ViewSolution">
+        <Navigation
+          Buttons={[
+            {
+              text: "Take Interview",
+              ModalType: "viewQuestion",
+            },
+          ]}
+        />
         <ReactMarkdown
           children={JSON.parse(JSON.stringify(ModalDetail.solution))}
           components={{
@@ -21,7 +27,7 @@ const ViewSolution = ({ ModalDetail }: IModal) => {
               return !inline && match ? (
                 <SyntaxHighlighter
                   children={String(children).replace(/\n$/, "")}
-                  style={dark}
+                  style={dracula}
                   language={match[1]}
                   PreTag="div"
                   {...props}

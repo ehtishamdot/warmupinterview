@@ -9,7 +9,6 @@ import { dark } from "react-syntax-highlighter/dist/esm/styles/prism";
 const AddQuestion = () => {
   const [document, setDocument] = useState("");
 
-  console.log(document);
   return (
     <Modal>
       <form className="AddQuestion">

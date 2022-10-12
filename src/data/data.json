@@ -310,6 +310,291 @@
       ]
     },
     {
+      "id": 0,
+      "name": "HTML",
+      "columns": [
+        {
+          "id": 0,
+          "name": "Todo",
+          "tasks": [
+            {
+              "id": 3,
+              "question": "What is JSON and its common operations",
+              "description": "",
+              "status": "Todo",
+              "statusId": 0,
+              "solution": " **JSON** is a text-based data format following JavaScript object syntax, which was popularized by `Douglas Crockford`. It is useful when you want to transmit data across a network and it is basically just a text file with an extension of .json, and a MIME type of application/json\n\n    **Parsing:** Converting a string to a native object\n\n    ```javascript\n    JSON.parse(text);\n    ```\n\n    **Stringification:** converting a native object to a string so it can be transmitted across the network\n\n    ```javascript\n    JSON.stringify(object);\n    ```"
+            },
+            {
+              "id": 4,
+              "question": "What is the purpose of the array slice method",
+              "description": "",
+              "status": "Todo",
+              "statusId": 0,
+              "solution": "### What is the purpose of the array slice method\n\n   The **slice()** method returns the selected elements in an array as a new array object. It selects the elements starting at the given start argument, and ends at the given optional end argument without including the last element. If you omit the second argument then it selects till the end.\n\n   Some of the examples of this method are,\n\n   ```javascript\n   let arrayIntegers = [1, 2, 3, 4, 5];\n   let arrayIntegers1 = arrayIntegers.slice(0, 2); // returns [1,2]\n   let arrayIntegers2 = arrayIntegers.slice(2, 3); // returns [3]\n   let arrayIntegers3 = arrayIntegers.slice(4); //returns [5]\n   ```\n\n   **Note:** Slice method won't mutate the original array but it returns the subset as a new array."
+            },
+            {
+              "id": 5,
+              "question": "What is the purpose of the array splice method",
+              "description": "",
+              "status": "Todo",
+              "statusId": 0,
+              "solution": "### What is the purpose of the array splice method\n\n   The **splice()** method is used either adds/removes items to/from an array, and then returns the removed item. The first argument specifies the array position for insertion or deletion whereas the optional second argument indicates the number of elements to be deleted. Each additional argument is added to the array.\n\n   Some of the examples of this method are,\n\n   ```javascript\n   let arrayIntegersOriginal1 = [1, 2, 3, 4, 5];\n   let arrayIntegersOriginal2 = [1, 2, 3, 4, 5];\n   let arrayIntegersOriginal3 = [1, 2, 3, 4, 5];\n\n   let arrayIntegers1 = arrayIntegersOriginal1.splice(0, 2); // returns [1, 2]; original array: [3, 4, 5]\n   let arrayIntegers2 = arrayIntegersOriginal2.splice(3); // returns [4, 5]; original array: [1, 2, 3]\n   let arrayIntegers3 = arrayIntegersOriginal3.splice(3, 1, \"a\", \"b\", \"c\"); //returns [4]; original array: [1, 2, 3, \"a\", \"b\", \"c\", 5]\n   ```\n\n   **Note:** Splice method modifies the original array and returns the deleted array.\n\n   **[⬆ Back to Top](#table-of-contents)**\n\n7. ### What is the difference between slice and splice\n\n   Some of the major difference in a tabular form\n\n   | Slice                                        | Splice                                          |\n   | -------------------------------------------- | ----------------------------------------------- |\n   | Doesn't modify the original array(immutable) | Modifies the original array(mutable)            |\n   | Returns the subset of original array         | Returns the deleted elements as array           |\n   | Used to pick the elements from array         | Used to insert or delete elements to/from array |"
+            },
+            {
+              "id": 6,
+              "question": "How do you compare Object and Map",
+              "description": "",
+              "status": "Todo",
+              "statusId": 0,
+              "solution": " | Slice                                        | Splice                                          |\n   | -------------------------------------------- | ----------------------------------------------- |\n   | Doesn't modify the original array(immutable) | Modifies the original array(mutable)            |\n   | Returns the subset of original array         | Returns the deleted elements as array           |\n   | Used to pick the elements from array         | Used to insert or delete elements to/from array |"
+            }
+          ]
+        },
+        {
+          "id": 1,
+          "name": "Doing",
+          "tasks": [
+            {
+              "id": 4,
+              "title": "Design settings and search pages",
+              "description": "",
+              "status": "Doing",
+              "statusId": 1,
+              "subtasks": [
+                {
+                  "title": "Settings - Account page",
+                  "isCompleted": true
+                },
+                {
+                  "title": "Settings - Billing page",
+                  "isCompleted": true
+                },
+                {
+                  "title": "Search page",
+                  "isCompleted": false
+                }
+              ]
+            },
+            {
+              "id": 5,
+              "title": "Add account management endpoints",
+              "description": "",
+              "status": "Doing",
+              "statusId": 1,
+              "subtasks": [
+                {
+                  "title": "Upgrade plan",
+                  "isCompleted": true
+                },
+                {
+                  "title": "Cancel plan",
+                  "isCompleted": true
+                },
+                {
+                  "title": "Update payment method",
+                  "isCompleted": false
+                }
+              ]
+            },
+            {
+              "id": 6,
+              "title": "Design onboarding flow",
+              "description": "",
+              "status": "Doing",
+              "statusId": 1,
+              "subtasks": [
+                {
+                  "title": "Sign up page",
+                  "isCompleted": true
+                },
+                {
+                  "title": "Sign in page",
+                  "isCompleted": false
+                },
+                {
+                  "title": "Welcome page",
+                  "isCompleted": false
+                }
+              ]
+            },
+            {
+              "id": 7,
+              "title": "Add search enpoints",
+              "description": "",
+              "status": "Doing",
+              "statusId": 1,
+              "subtasks": [
+                {
+                  "title": "Add search endpoint",
+                  "isCompleted": true
+                },
+                {
+                  "title": "Define search filters",
+                  "isCompleted": false
+                }
+              ]
+            },
+            {
+              "id": 8,
+              "title": "Add authentication endpoints",
+              "description": "",
+              "status": "Doing",
+              "statusId": 1,
+              "subtasks": [
+                {
+                  "title": "Define user model",
+                  "isCompleted": true
+                },
+                {
+                  "title": "Add auth endpoints",
+                  "isCompleted": false
+                }
+              ]
+            },
+            {
+              "id": 9,
+              "title": "Research pricing points of various competitors and trial different business models",
+              "description": "We know what we're planning to build for version one. Now we need to finalise the first pricing model we'll use. Keep iterating the subtasks until we have a coherent proposition.",
+              "status": "Doing",
+              "statusId": 1,
+              "subtasks": [
+                {
+                  "title": "Research competitor pricing and business models",
+                  "isCompleted": true
+                },
+                {
+                  "title": "Outline a business model that works for our solution",
+                  "isCompleted": false
+                },
+                {
+                  "title": "Talk to potential customers about our proposed solution and ask for fair price expectancy",
+                  "isCompleted": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "name": "Done",
+          "tasks": [
+            {
+              "id": 10,
+              "title": "Conduct 5 wireframe tests",
+              "description": "Ensure the layout continues to make sense and we have strong buy-in from potential users.",
+              "status": "Done",
+              "statusId": 2,
+              "subtasks": [
+                {
+                  "title": "Complete 5 wireframe prototype tests",
+                  "isCompleted": true
+                }
+              ]
+            },
+            {
+              "id": 11,
+              "title": "Create wireframe prototype",
+              "description": "Create a greyscale clickable wireframe prototype to test our asssumptions so far.",
+              "status": "Done",
+              "statusId": 2,
+              "subtasks": [
+                {
+                  "title": "Create clickable wireframe prototype in Balsamiq",
+                  "isCompleted": true
+                }
+              ]
+            },
+            {
+              "id": 12,
+              "title": "Review results of usability tests and iterate",
+              "description": "Keep iterating through the subtasks until we're clear on the core concepts for the app.",
+              "status": "Done",
+              "statusId": 2,
+              "subtasks": [
+                {
+                  "title": "Meet to review notes from previous tests and plan changes",
+                  "isCompleted": true
+                },
+                {
+                  "title": "Make changes to paper prototypes",
+                  "isCompleted": true
+                },
+                {
+                  "title": "Conduct 5 usability tests",
+                  "isCompleted": true
+                }
+              ]
+            },
+            {
+              "id": 13,
+              "title": "Create paper prototypes and conduct 10 usability tests with potential customers",
+              "description": "",
+              "status": "Done",
+              "statusId": 2,
+              "subtasks": [
+                {
+                  "title": "Create paper prototypes for version one",
+                  "isCompleted": true
+                },
+                {
+                  "title": "Complete 10 usability tests",
+                  "isCompleted": true
+                }
+              ]
+            },
+            {
+              "id": 14,
+              "title": "Market discovery",
+              "description": "We need to define and refine our core product. Interviews will help us learn common pain points and help us define the strongest MVP.",
+              "status": "Done",
+              "statusId": 2,
+              "subtasks": [
+                {
+                  "title": "Interview 10 prospective customers",
+                  "isCompleted": true
+                }
+              ]
+            },
+            {
+              "id": 15,
+              "title": "Competitor analysis",
+              "description": "",
+              "status": "Done",
+              "statusId": 2,
+              "subtasks": [
+                {
+                  "title": "Find direct and indirect competitors",
+                  "isCompleted": true
+                },
+                {
+                  "title": "SWOT analysis for each competitor",
+                  "isCompleted": true
+                }
+              ]
+            },
+            {
+              "id": 16,
+              "title": "Research the market",
+              "description": "We need to get a solid overview of the market to ensure we have up-to-date estimates of market size and demand.",
+              "status": "Done",
+              "statusId": 2,
+              "subtasks": [
+                {
+                  "title": "Write up research analysis",
+                  "isCompleted": true
+                },
+                {
+                  "title": "Calculate TAM",
+                  "isCompleted": true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": 1,
       "name": "Marketing Plan",
       "columns": [
